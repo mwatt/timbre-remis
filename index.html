@@ -310,7 +310,7 @@
         <button class="btn btn-remis" style="background:#4527A0" id="btn-op2" onclick="solicitar('op2')">📍 OPCIONAL 2<span class="sub-label" id="lbl-op2">...</span></button>
         <div class="card"><p style="text-align:center; font-weight:bold;">¿Estás en otro lugar?</p><button class="btn btn-serv" style="background:#2196F3; color:white;" onclick="enviarUbicacionRemis()">📍 ENVIAR MI UBICACIÓN ACTUAL</button>
         <button class="btn btn-sugerencia" onclick="enviarQueja()">📩 SUGERENCIAS / CONTACTAR OPERADOR</button>
-        <button class="btn btn-sugerencia" onclick="alert('🧮 Calculadora de tarifa - Próximamente')">🧮 CALCULADORA DE TARIFA (en construcción)</button></div>
+        <button class="btn btn-sugerencia" onclick="if (typeof gtag === 'function') gtag('event', 'feature_no_disponible', { feature: 'calculadora_tarifa' }); alert('🧮 Calculadora de tarifa - Próximamente')">🧮 CALCULADORA DE TARIFA (en construcción)</button></div>
         <div class="card"><h3>⚙️ Configuración remis</h3><label>Apellido y Nombre:</label><input type="text" id="cfg-ape" placeholder="Ej: Juan Pérez" oninput="guardarRemisAuto()"><label>🏠 Casa:</label><input type="text" id="cfg-casa" placeholder="Dirección principal" oninput="guardarRemisAuto()"><label>📍 Opcional 1:</label><input type="text" id="cfg-op1" placeholder="Dirección secundaria" oninput="guardarRemisAuto()"><label>📍 Opcional 2:</label><input type="text" id="cfg-op2" placeholder="Dirección terciaria" oninput="guardarRemisAuto()"></div>
         <div class="btn-back" onclick="navegar('view-main')">⬅ VOLVER AL MENÚ</div>
     </div>
@@ -640,6 +640,7 @@
                         const nombreMostrar = ape ? ape : "Cliente";
                         const msg = `Hola Acción! Soy ${nombreMostrar}. Necesito un móvil en ${dir}`;
                         window.open(`https://wa.me/5493442641200?text=${encodeURIComponent(msg)}`, "_blank");
+                        if (typeof gtag === 'function') gtag('event', 'pedido_creado', { tipo_direccion: tipo });
                     };
 
                     if (!Storage.getNombre()) {
@@ -658,6 +659,10 @@
                         navigator.geolocation.getCurrentPosition(p => {
                             const url = `https://www.google.com/maps?q=${p.coords.latitude},${p.coords.longitude}`;
                             window.open(`https://wa.me/5493442641200?text=${encodeURIComponent("Hola Acción! Soy " + nombreMostrar + ". Mi ubicación: " + url)}`, "_blank");
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'uso_gps', { contexto: 'enviar_ubicacion' });
+                                gtag('event', 'pedido_creado', { tipo_direccion: 'gps' });
+                            }
                         }, () => alert("⚠️ Por favor, activá el GPS para enviar tu ubicación exacta."));
                     };
 
@@ -684,6 +689,7 @@
             activar: (tipo) => {
                 Terminos.ejecutarConTerminos(() => {
                     if (!Utils.verificarInternet()) return;
+                    if (typeof gtag === 'function') gtag('event', 'panico_activado', { tipo: tipo });
                     const nombre = Storage.getNombre() || "Persona";
                     const grupoLink = Storage.getGrupoWA();
                     const tieneGrupo = grupoLink && grupoLink.trim() !== "";
@@ -852,6 +858,7 @@
                 Terminos.ejecutarConTerminos(() => {
                     if (!Utils.verificarInternet()) return;
                     window.open(`https://wa.me/?text=${encodeURIComponent("🚖 Acción Remis Cdelu\n\nPedí tu remis desde acá:\n" + window.location.href)}`, "_blank");
+                    if (typeof gtag === 'function') gtag('event', 'compartir_usado', { metodo: 'whatsapp' });
                 });
             },
             directo: () => {
@@ -862,6 +869,7 @@
                     num = Utils.limpiarNumero(num);
                     if (!Utils.validarNumero(num)) { alert("⚠️ Número inválido"); return; }
                     window.open(`https://wa.me/549${num}?text=${encodeURIComponent("🚖 Acción Remis Cdelu\n\nPedí tu remis desde acá:\n" + window.location.href)}`, "_blank");
+                    if (typeof gtag === 'function') gtag('event', 'compartir_usado', { metodo: 'directo' });
                 });
             },
             qr: () => {
@@ -870,6 +878,7 @@
                 if (window.qrInstance) try { window.qrInstance.clear(); } catch(e){}
                 window.qrInstance = new QRCode(box, { text: window.location.href, width: 200, height: 200 });
                 document.getElementById('qr-modal').style.display = 'flex';
+                if (typeof gtag === 'function') gtag('event', 'compartir_usado', { metodo: 'qr' });
             },
             cerrarQR: () => document.getElementById('qr-modal').style.display = 'none',
             sugerencia: () => {
@@ -877,6 +886,7 @@
                     if (!Utils.verificarInternet()) return;
                     const ape = Storage.getNombre() || "Cliente";
                     window.open(`https://wa.me/5493442641200?text=${encodeURIComponent("Hola! Soy " + ape + ". Sugerencia/reclamo: ")}`, "_blank");
+                    if (typeof gtag === 'function') gtag('event', 'sugerencia_enviada');
                 });
             }
         };
