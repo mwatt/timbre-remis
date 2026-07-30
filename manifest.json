@@ -53,5 +53,19 @@
       "purpose": "any maskable"
     }
   ],
+  "screenshots": [
+    {
+      "src": "screenshot-1.jpg",
+      "sizes": "720x1600",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshot-2.jpg",
+      "sizes": "720x1600",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
   "categories": ["travel", "utilities", "business"]
 }
