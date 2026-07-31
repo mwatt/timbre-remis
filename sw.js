@@ -1,4 +1,4 @@
-const CACHE_NAME = 'accion-remis-v6';
+const CACHE_NAME = 'accion-remis-v7';
 
 const urlsToCache = [
   '/',

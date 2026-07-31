@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <meta name="theme-color" content="#000000">
-    <title>Acción Remis - Cdelu Oficial</title>
+    <title>Acción Remises - Cdelu Oficial</title>
     
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Acción Remis">
+    <meta name="apple-mobile-web-app-title" content="Acción Remises">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
@@ -254,8 +254,8 @@
     <div id="scroll-arrow">↓</div>
 
     <header>
-        <img src="logo.png" alt="Acción Remis" onerror="this.src='https://via.placeholder.com/130x80/ff2b2b/ffffff?text=ACCION'">
-        <h1>Acción Remis</h1>
+        <img src="logo.png" alt="Acción Remises" onerror="this.src='https://via.placeholder.com/130x80/ff2b2b/ffffff?text=ACCION'">
+        <h1>Acción Remises</h1>
     </header>
 
     <div class="container" id="view-main">
@@ -496,7 +496,7 @@
         // ==================== COMPARTIR ====================
         async function compartirApp() {
             const url = window.location.href;
-            const titulo = "Acción Remis";
+            const titulo = "Acción Remises";
             const texto = "🚖 Pedí tu remis desde acá:";
             
             // Usar API nativa de compartir si está disponible (mejor experiencia)
@@ -522,7 +522,7 @@
             num = limpiarNumero(num);
             if(num.length < 6) return alert("Número inválido (mínimo 6 dígitos)");
             const url = window.location.href;
-            window.open(`https://wa.me/549${num}?text=${encodeURIComponent("🚖 Acción Remis Cdelu\n\nPedí tu remis desde acá:\n" + url)}`, "_blank");
+            window.open(`https://wa.me/549${num}?text=${encodeURIComponent("🚖 Acción Remises Cdelu\n\nPedí tu remis desde acá:\n" + url)}`, "_blank");
         }
 
         function mostrarCodigoQR() {
