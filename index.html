@@ -57,13 +57,14 @@
             top: 0;
             z-index: 1000;
         }
-        header img { 
-            width: 130px; 
-            filter: drop-shadow(0 0 10px rgba(255,0,0,0.5)); 
+        header img {
+            width: 130px;
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
             border-radius: 8px;
             display: inline-block;
+            transform: rotate(7deg);
         }
-        header h1 { color: white; margin-top: 10px; font-size: 22px; font-weight: 900; text-transform: uppercase; }
+        header h1 { color: white; margin-top: 0; font-size: 22px; font-weight: 900; text-transform: uppercase; }
 
         .container {
             padding: 20px 15px 120px;
@@ -286,7 +287,7 @@
 
     <div id="sos-overlay"><div style="font-size:80px">🆘</div><h2>¡AYUDA EN CAMINO!</h2><div class="sos-status" id="sos-status-text">Enviando alerta...</div><div class="spinner"></div><button class="btn btn-back" onclick="detenerSOS()" style="background:black">CANCELAR</button></div>
 
-    <header><img src="logo.png" alt="Acción Remises" onerror="this.src='https://via.placeholder.com/130x80/ff2b2b/ffffff?text=ACCION'"><h1>Acción Remises</h1></header>
+    <header><img src="logo-header.png" alt="Acción Remises" onerror="this.src='https://via.placeholder.com/130x80/ff2b2b/ffffff?text=ACCION'"><h1>Acción Remises</h1></header>
 
     <!-- Pantalla principal -->
     <div class="container" id="view-main">

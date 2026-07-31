@@ -1,9 +1,10 @@
-const CACHE_NAME = 'accion-remis-v7';
+const CACHE_NAME = 'accion-remis-v8';
 
 const urlsToCache = [
   '/',
   '/index.html',
   '/logo.png',
+  '/logo-header.png',
   '/manifest.json'
 ];
 
