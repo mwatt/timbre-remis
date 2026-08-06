@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "dev.mwaterloo.poc",
+        "sha256_cert_fingerprints": ["D5:29:CA:07:A3:75:5E:3F:63:C0:38:09:F4:4E:E1:F9:B6:56:67:21:57:AE:19:B3:84:DF:8D:C7:B3:48:96:2A"]
+      }
+    }]
