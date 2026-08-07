@@ -2,7 +2,7 @@
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target": {
         "namespace": "android_app",
-        "package_name": "dev.mwaterloo.poc",
-        "sha256_cert_fingerprints": ["D5:29:CA:07:A3:75:5E:3F:63:C0:38:09:F4:4E:E1:F9:B6:56:67:21:57:AE:19:B3:84:DF:8D:C7:B3:48:96:2A"]
+        "package_name": "ar.com.accionremises.app",
+        "sha256_cert_fingerprints": ["78:43:5D:5A:9A:91:7D:FE:17:30:9D:0D:F0:40:CB:59:0A:8F:E5:5A:4E:98:CD:E7:29:00:AD:E4:41:FB:27:09"]
       }
     }]
