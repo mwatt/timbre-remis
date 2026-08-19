@@ -3,6 +3,9 @@
       "target": {
         "namespace": "android_app",
         "package_name": "ar.com.accionremises.app",
-        "sha256_cert_fingerprints": ["78:43:5D:5A:9A:91:7D:FE:17:30:9D:0D:F0:40:CB:59:0A:8F:E5:5A:4E:98:CD:E7:29:00:AD:E4:41:FB:27:09"]
+        "sha256_cert_fingerprints": [
+          "78:43:5D:5A:9A:91:7D:FE:17:30:9D:0D:F0:40:CB:59:0A:8F:E5:5A:4E:98:CD:E7:29:00:AD:E4:41:FB:27:09",
+          "2D:40:4B:7E:3B:5B:67:5E:14:62:DA:6B:73:E2:D4:C9:73:01:7C:2C:82:4D:57:4E:0B:0D:80:AE:50:1A:56:8C"
+        ]
       }
     }]
